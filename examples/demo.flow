@@ -1,0 +1,15 @@
+// A short program that touches every phase: a variable, an event with an if,
+// a call to a built-in, a constant expression, a trigger and an emit.
+program Demo {
+    let temperature: float = 32.5;
+
+    event check {
+        if temperature > 30.0 {
+            call turn_on("fan");
+        }
+    }
+
+    let score: int = 2 + 3 * 4;
+    trigger check;
+    emit score;
+}
