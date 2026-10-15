@@ -1,0 +1,10 @@
+// Playground: write any FlowLang code here, save (Cmd+S), then run:
+//   .venv/bin/python -m flowlang playground.flow --tokens
+
+program Playground {
+    let temperature: float = 32.5;
+
+    if temperature >= 30.0 {
+        emit "Too hot";
+    }
+}

@@ -1,0 +1,7 @@
+// Expected: syntax error at line 5, missing ';' after the declaration.
+program Broken {
+    let motion: bool = true;
+
+    let count: int = 3
+    emit count;
+}

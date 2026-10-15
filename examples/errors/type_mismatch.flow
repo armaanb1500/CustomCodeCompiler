@@ -1,0 +1,4 @@
+// Expected: semantic error at line 3, cannot store a string in an int variable.
+program Broken {
+    let count: int = "five";
+}

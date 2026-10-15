@@ -1,0 +1,5 @@
+// Expected: lexical error at line 4, '@' is not a valid character.
+program Broken {
+    let price: float = 10.0;
+    let total: float = price @ 2.0;
+}

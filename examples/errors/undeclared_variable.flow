@@ -1,0 +1,7 @@
+// Expected: semantic error at line 4, 'humidity' was never declared.
+program Broken {
+    let temperature: float = 25.0;
+    if humidity > 80.0 {
+        emit "Too humid";
+    }
+}

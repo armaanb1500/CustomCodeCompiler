@@ -1,0 +1,22 @@
+// Reusable functions, parameters, return types and arithmetic.
+program Billing {
+
+    fn calculate_total(price: float, tax: float) -> float {
+        return price + (price * tax / 100.0);
+    }
+
+    fn category(amount: float) -> string {
+        if amount > 5000.0 {
+            return "Premium";
+        } else if amount > 1000.0 {
+            return "Standard";
+        } else {
+            return "Basic";
+        }
+    }
+
+    let amount: float = calculate_total(1000.0, 18.0);
+
+    emit amount;
+    emit category(amount) + " purchase";
+}

@@ -1,0 +1,20 @@
+// Repetition, logical operators and operator precedence.
+program Security {
+
+    let failed_attempts: int = 4;
+    let max_attempts: int = 3;
+    let locked: bool = false;
+
+    if failed_attempts >= max_attempts && !locked {
+        emit "Account should be locked";
+        locked = true;
+    }
+
+    repeat failed_attempts - 1 {
+        emit "Security check";
+    }
+
+    // * binds tighter than +, so this is 2 + (3 * 4) = 14.
+    let score: int = 2 + 3 * 4;
+    emit score;
+}

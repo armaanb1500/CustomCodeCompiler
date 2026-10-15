@@ -1,0 +1,30 @@
+// Event-driven automation: an event handler reacts to sensor values.
+program SmartHome {
+
+    let temperature: float = 32.5;
+    let motion: bool = true;
+    let alert_count: int = 0;
+
+    event on_sensor_update {
+        if temperature > 30.0 {
+            emit "High temperature detected";
+            call turn_on("fan");
+            alert_count = alert_count + 1;  // the event changes a global variable
+        } else {
+            call turn_off("fan");
+        }
+
+        if motion == true {
+            emit "Motion detected";
+        }
+    }
+
+    trigger on_sensor_update;
+
+    // Values change, then the event fires again.
+    temperature = 24.0;
+    motion = false;
+    trigger on_sensor_update;
+
+    emit alert_count;
+}
